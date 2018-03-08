@@ -11,7 +11,7 @@ function searchRepositories(){
       <p>Repo URL: <a href='${repo.html_url}'> ${repo.html_url}</a></p>
       <p><img src='${repo.owner.avatar_url}' height="40" width="40">  ${repo.owner.login}</p>
       <p>Description: ${repo.description}</p>
-      <a href="#" data-owner="${repo.owner.login}" data-repository="${repo.name}" onclick="showCommits(this)">Show Commits</a><br>)})
+      <a href="#" data-owner="${repo.owner.login}" data-repository="${repo.name}" onclick="showCommits(this)">Show Commits</a><br>`)})
  }`
   document.getElementById("results").innerHTML = repoList
   }).fail(error => {
