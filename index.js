@@ -9,8 +9,9 @@ function searchRepositories(){
     const repoList = `${data.items.map(repo => { return (
       `<h3>${repo.name}</h3>
       <a href='${repo.html_url}'>Repo URL</a>
-      <p><img src='${repo.owner.avatar_url}' height="40" width="40">  ${repo.owner.login}</p>
-      <br><br>
+      <img src='${repo.owner.avatar_url}' height="40" width="40"><br>
+      <p>${repo.owner.login}</p>
+
       <p>Description: ${repo.description}</p>
       <a href="#" data-owner="${repo.owner.login}" data-repository="${repo.name}" onclick="showCommits(this)">Show Commits</a><br>`)})
  }`
