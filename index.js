@@ -22,7 +22,7 @@ function searchRepositories(){
 function showCommits(c){
   $.get(`https://api.github.com/repos/${c.dataset.owner}/${c.dataset.repository}/commits`).done(function(data){
       const commitList = `${data.map(commit => { return (
-        <h3>SHA: ${commit.sha}  </h3>
+        `<h3>SHA: ${commit.sha}  </h3>
         <p><img src='${commit.author.avatar_url}' height="40" width="40"> ${commit.author.login}</p>
       `)
       })}`
