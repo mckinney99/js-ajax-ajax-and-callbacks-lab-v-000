@@ -19,8 +19,8 @@ function searchRepositories(){
   })
 }
 
-function showCommits(el){
-  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`).done(function(data){
+function showCommits(c){
+  $.get(`https://api.github.com/repos/${c.dataset.owner}/${c.dataset.repository}/commits`).done(function(data){
       const commitList = `${data.map(commit => { return (
         `<h3>SHA: ${commit.sha}  </h3>
         <p><img src='${commit.author.avatar_url}' height="32" width="32"> ${commit.author.login}</p>
@@ -29,7 +29,6 @@ function showCommits(el){
       document.getElementById("details").innerHTML = commitList
   })
   }
-
 
 function displayError(){
     $('#errors').html("I'm sorry, there's been an error. Please try again.")
