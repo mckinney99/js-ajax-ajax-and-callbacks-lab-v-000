@@ -8,7 +8,7 @@ function searchRepositories(){
   $.get(url).done(function(data) {
     const repoList = `${data.items.map(repo => { return (
       `<h3>${repo.name}</h3>
-      <a href='${repo.html_url}'>Repo URL</a><br>
+      <a href='${repo.html_url}'>Repo URL</a><br><br>
       <img src='${repo.owner.avatar_url}' height="40" width="40"><br>
       <p>${repo.owner.login}</p>
 
